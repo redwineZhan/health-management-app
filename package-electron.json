@@ -1,0 +1,59 @@
+{
+  "name": "health-management-app",
+  "version": "1.0.0",
+  "description": "A comprehensive health management application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac",
+    "dist": "electron-builder --mac --publish=never"
+  },
+  "keywords": [
+    "health",
+    "wellness",
+    "tracking",
+    "TCM",
+    "weight-loss",
+    "community"
+  ],
+  "author": "HealthTrack Pro",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.healthtrackpro.app",
+    "productName": "Health Management App",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.healthcare-fitness",
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "dmg": {
+      "title": "Health Management App",
+      "background": "assets/dmg-background.png",
+      "icon": "assets/icon.icns",
+      "iconSize": 128,
+      "contents": [
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 220,
+          "type": "file"
+        }
+      ]
+    }
+  }
+}
