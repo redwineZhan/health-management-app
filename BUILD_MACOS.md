@@ -13,10 +13,14 @@
 在构建macOS版本之前，请确保满足以下要求：
 
 ### 系统要求
-- macOS 10.15 (Catalina) 或更高版本
+- **必须在macOS 10.15 (Catalina) 或更高版本上运行**
 - Xcode Command Line Tools
 - Node.js 16.x 或更高版本
 - npm 8.x 或更高版本
+
+**重要提示**: electron-builder 只能在目标平台上构建应用，即：
+- 要构建macOS应用，必须在macOS系统上运行构建脚本
+- 在Linux或Windows上无法构建macOS应用
 
 ### 安装Xcode Command Line Tools
 ```bash

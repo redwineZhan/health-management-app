@@ -76,6 +76,20 @@ if [ ! -f "assets/dmg-background.png" ]; then
     echo "DMG_BG_PLACEHOLDER" > assets/dmg-background.png
 fi
 
+# 检查操作系统
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "⚠️  当前不在macOS系统上运行"
+    echo "ℹ️   electron-builder 只能在macOS上构建macOS应用"
+    echo "ℹ️   在macOS系统上运行此脚本以完成构建"
+    echo ""
+    echo "📋 构建前检查清单:"
+    echo "   1. 确保在macOS系统上运行"
+    echo "   2. 安装Xcode Command Line Tools: xcode-select --install"
+    echo "   3. 确保已安装Node.js和npm"
+    echo "   4. 运行此脚本: bash build-macos-test.sh"
+    exit 0
+fi
+
 # 构建macOS应用
 echo "🍎 正在构建macOS版本..."
 if command -v electron-builder &> /dev/null; then
